@@ -5,3 +5,14 @@ MySQL 使用三值逻辑 —— TRUE, FALSE 和 UNKNOWN。任何与 NULL 值进�
 SELECT NULL IS NULL;      -- 返回 1 (TRUE)
 SELECT NULL IS NOT NULL;  -- 返回 0 (FALSE)
 ```
+
+关于降序条件
+```sql
+select name, population, area from World 
+where population >= 25000000 or area >= 3000000
+order by population desc, area desc;
+```
+这个查询会：
+1. 选择人口≥2500万或面积≥300万平方公里的国家
+2. 先按人口降序排列（人口最多的排在最前面）
+3. 如果人口相同，则按面积降序排列
