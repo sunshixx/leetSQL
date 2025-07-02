@@ -16,3 +16,17 @@ order by population desc, area desc;
 1. 选择人口≥2500万或面积≥300万平方公里的国家
 2. 先按人口降序排列（人口最多的排在最前面）
 3. 如果人口相同，则按面积降序排列
+
+去重直接查询
+```sql
+select distinct author_id as id
+from Views 
+where author_id = viewer_id
+order by id asc
+```
+
+某个字段是Char类型，筛选其长度的查询
+```sql
+select tweet_id from Tweets 
+where CHAR_LENGTH(content)>15
+```
